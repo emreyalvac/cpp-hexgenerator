@@ -5,7 +5,7 @@
         "cflags": [ "-std=c++11" ],
         "cflags_cc!": [ "-fno-exceptions" ],
         "sources": [
-            "main.cc"
+            "hex-generator.cpp"
         ],
         'include_dirs': [
             "<!@(node -p \"require('node-addon-api').include\")",

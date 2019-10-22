@@ -1,11 +1,23 @@
 {
   "name": "cpp-hexgenerator",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "author": {
     "email": "emre@milesturizm.com",
     "name": "Emre YALVAÇ",
     "url": "https://www.emreyalvac.com"
   },
   "main": "hex-generator.js",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/emreyalvac/cpp-hexgenerator"
+  },
+  "homepage": "https://github.com/emreyalvac/cpp-hexgenerator",
+  "bugs": "https://github.com/emreyalvac/cpp-hexgenerator/issues",
+  "dependencies": {
+    "node-addon-api": "^1.7.1"
+  },
+  "devDependencies": {
+    "node-gyp": "^6.0.0"
+  }
 }

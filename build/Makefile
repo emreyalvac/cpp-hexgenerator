@@ -321,23 +321,23 @@ $(obj).$(TOOLSET)/%.o: $(obj)/%.S FORCE_DO_CMD
 
 ifeq ($(strip $(foreach prefix,$(NO_LOAD),\
     $(findstring $(join ^,$(prefix)),\
-                 $(join ^,../node_modules/node-addon-api/src/node-api.target.mk)))),)
-  include ../node_modules/node-addon-api/src/node-api.target.mk
-endif
-ifeq ($(strip $(foreach prefix,$(NO_LOAD),\
-    $(findstring $(join ^,$(prefix)),\
-                 $(join ^,../node_modules/node-addon-api/src/nothing.target.mk)))),)
-  include ../node_modules/node-addon-api/src/nothing.target.mk
-endif
-ifeq ($(strip $(foreach prefix,$(NO_LOAD),\
-    $(findstring $(join ^,$(prefix)),\
                  $(join ^,hex-generator.target.mk)))),)
   include hex-generator.target.mk
+endif
+ifeq ($(strip $(foreach prefix,$(NO_LOAD),\
+    $(findstring $(join ^,$(prefix)),\
+                 $(join ^,node_modules/node-addon-api/src/node-api.target.mk)))),)
+  include node_modules/node-addon-api/src/node-api.target.mk
+endif
+ifeq ($(strip $(foreach prefix,$(NO_LOAD),\
+    $(findstring $(join ^,$(prefix)),\
+                 $(join ^,node_modules/node-addon-api/src/nothing.target.mk)))),)
+  include node_modules/node-addon-api/src/nothing.target.mk
 endif
 
 quiet_cmd_regen_makefile = ACTION Regenerating $@
 cmd_regen_makefile = cd $(srcdir); /usr/local/lib/node_modules/node-gyp/gyp/gyp_main.py -fmake --ignore-environment "-Dlibrary=shared_library" "-Dvisibility=default" "-Dnode_root_dir=/Users/emreyalvac/Library/Caches/node-gyp/10.16.3" "-Dnode_gyp_dir=/usr/local/lib/node_modules/node-gyp" "-Dnode_lib_file=/Users/emreyalvac/Library/Caches/node-gyp/10.16.3/<(target_arch)/node.lib" "-Dmodule_root_dir=/Users/emreyalvac/Desktop/nodemongoc++/hex-generator" "-Dnode_engine=v8" "--depth=." "-Goutput_dir=." "--generator-output=build" -I/Users/emreyalvac/Desktop/nodemongoc++/hex-generator/build/config.gypi -I/usr/local/lib/node_modules/node-gyp/addon.gypi -I/Users/emreyalvac/Library/Caches/node-gyp/10.16.3/include/node/common.gypi "--toplevel-dir=." binding.gyp
-Makefile: $(srcdir)/build/config.gypi $(srcdir)/../../../Library/Caches/node-gyp/10.16.3/include/node/common.gypi $(srcdir)/binding.gyp $(srcdir)/../../../../../usr/local/lib/node_modules/node-gyp/addon.gypi $(srcdir)/../node_modules/node-addon-api/src/node_api.gyp
+Makefile: $(srcdir)/build/config.gypi $(srcdir)/node_modules/node-addon-api/src/node_api.gyp $(srcdir)/../../../Library/Caches/node-gyp/10.16.3/include/node/common.gypi $(srcdir)/../../../../../usr/local/lib/node_modules/node-gyp/addon.gypi $(srcdir)/binding.gyp
 	$(call do_cmd,regen_makefile)
 
 # "all" is a concatenation of the "all" targets from all the included
