@@ -1,0 +1,1 @@
+cmd_Release/hex-generator.node := c++ -bundle -undefined dynamic_lookup -Wl,-no_pie -Wl,-search_paths_first -mmacosx-version-min=10.7 -arch x86_64 -L./Release -stdlib=libc++  -o Release/hex-generator.node Release/obj.target/hex-generator/hex-generator.o Release/nothing.a 

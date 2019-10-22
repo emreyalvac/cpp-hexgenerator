@@ -1,0 +1,11 @@
+{
+  "name": "cpp-hexgenerator",
+  "version": "1.0.6",
+  "author": {
+    "email": "emre@milesturizm.com",
+    "name": "Emre YALVAÇ",
+    "url": "https://www.emreyalvac.com"
+  },
+  "main": "hex-generator.js",
+  "license": "ISC"
+}
