@@ -1,3 +1,5 @@
+// https://www.npmjs.com/package/cpp-hexgenerator
+
 #Javascript Hex Generator without Dependency (C++)
 
 Import library:
